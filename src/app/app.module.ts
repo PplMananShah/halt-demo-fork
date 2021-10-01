@@ -24,7 +24,7 @@ Amplify.configure({
 
     
          // OPTIONAL - Manually set the authentication flow type. Default is 'USER_SRP_AUTH'
-         authenticationFlowType: 'USER_PASSWORD_AUTH',
+         authenticationFlowType: 'USER_SRP_AUTH',
 
         //  OPTIONAL - Hosted UI configuration
         oauth: {
@@ -42,34 +42,6 @@ import { DashComponent } from './dash/dash.component';
 import { SigninComponent } from './signin/signin.component';
 
 
-
-const listener = (data:any) => {
-    // const logger = new Logger('My-Logger');
-    switch (data.payload.event) {
-        case 'signIn':
-            console.log('user signed in');
-            break;
-        case 'signUp':
-            console.log('user signed up');
-            break;
-        case 'signOut':
-            console.log('user signed out');
-            break;
-        case 'signIn_failure':
-            console.error('user sign in failed');
-            break;
-        case 'tokenRefresh':
-            console.log('token refresh succeeded');
-            break;
-        case 'tokenRefresh_failure':
-            console.error('token refresh failed');
-            break;
-        case 'configured':
-            console.log('the Auth module is configured');
-    }
-}
-
-Hub.listen('auth', listener);
 // You can get the current config object
 // const currentConfig = Auth.configure();
 
