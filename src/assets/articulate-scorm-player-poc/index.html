@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrom Player</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100vh;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    Hello
+    Hi
+    <iframe src="courses/employee-health-and-wellness-sample-course-scorm12-0XmOfuPk/scormdriver/indexAPI.html"> </iframe>
+    <script>
+      window.onmessage = (event) => {
+        console.log(event);
+      };
+
+      const SCORM = {};
+
+      const scormData = {};
+
+      const scormMainContent = {
+        mastery_score: "",
+        score_raw: ":",
+        scormData: JSON.stringify(scormData),
+        lesson_mode: "live",
+        lesson_location: "index.html",
+      };
+
+      SCORM.getValueFromLMS = function (varName) {
+        let varValue = null;
+        switch (varName) {
+          //   case "cardId":
+          //     varValue = scormObj.cardId;
+          //     break;
+          //   case "cardPid":
+          //     varValue = scormObj.cardPid;
+          //     break;
+
+          //   case "cardPerformanceComplete":
+          //     varValue = scormObj.cardPerformanceComplete;
+          //     break;
+
+          //   case "cardPerformanceId":
+          //     varValue = scormObj.cardPerformanceId;
+          //     break;
+
+          case 'cmi.core.student_name':
+            varValue = "Manan Shah";
+            break;
+
+          case "cmi.core.lesson_mode":
+            varValue = scormMainContent.lesson_mode;
+            break;
+
+          case "cmi.mode":
+            varValue = scormMainContent.lesson_mode;
+            break;
+
+          case "cmi.suspend_data":
+            varValue = scormMainContent.suspend_data;
+            break;
+
+          case "cmi.learner_name":
+            varValue = "Manan Shah";
+            break;
+
+          //   case "cmi.core.student_id" || "cmi.learner_id":
+          //     varValue = user.id();
+          //     break;
+
+          //   case "cmi.learner_id":
+          //     varValue = user.id();
+          //     break;
+
+          /* case "adlcp:masteryscore":
+            varValue = scormObj.mastery_score;
+            break;
+
+          case "cmi.core.score.raw":
+            varValue = scormMainContent.score_raw;
+            break;
+
+          case "cmi.score.raw":
+            varValue = scormMainContent.score_raw;
+            break;
+*/
+          case "cmi.core.lesson_location":
+            varValue = "index.html#/lessons/w9fXbu_74bpn3TRxjnV5Wr3z7LHbpOsQ";
+            break;
+/*
+          case "cmi.location":
+            varValue = scormMainContent.lesson_location;
+            break;
+
+          case "cmi.launch_data":
+            varValue = "";
+            break;
+
+          case "cmi.core.credit":
+            varValue = scormMainContent.credit;
+            break;
+
+          case "cmi.credit":
+            varValue = scormMainContent.credit;
+            break;
+
+          case "cmi.core.lesson_status":
+            varValue = scormMainContent.lesson_status;
+            break;
+
+          case "cmi.completion_status":
+            varValue = scormMainContent.lesson_status;
+            break;
+
+          case "cmi.core.entry":
+            varValue = scormMainContent.entry;
+            break;
+
+          case "cmi.entry":
+            varValue = scormMainContent.entry;
+            break;
+
+          case "cmi.core.total_time":
+            // debugger;
+            varValue = scormMainContent.total_time;
+            break;
+
+          case "cmi.total_time":
+            varValue = scormMainContent.total_time;
+            break;
+
+          case "cmi.progress_measure":
+            varValue = scormMainContent.progress_measure;
+            break;
+
+          case "cmi.interactions._count":
+            if (
+              scormMainContent.interactions === "null" ||
+              (scormMainContent.interactions &&
+                !JSON.parse(scormMainContent.interactions))
+            ) {
+              varValue = 0;
+              break;
+            }
+            varValue =
+              scormMainContent.interactions &&
+              JSON.parse(scormMainContent.interactions).length;
+            break;
+
+          case "cmi.interactions":
+            varValue =
+              scormMainContent.interactions &&
+              JSON.parse(scormMainContent.interactions);
+            break; */
+
+          default:
+            varValue = "";
+        }
+        return varValue;
+      };
+
+      window.API = {
+        LMSInitialize: (input) => {
+          console.log("LMSInitialize::", input);
+          window
+        },
+        LMSFinish: (input) => {
+          console.log("LMSFinish::", input);
+        },
+        LMSGetValue: (element) => {
+          console.log("NAN::", element);
+          return SCORM.getValueFromLMS(element);
+        },
+        LMSSetValue: (element, value) => {
+          console.log("MANAN::", element, "THERE", value);
+        },
+        LMSCommit: (input) => {
+          console.log("LMSCommit::", input);
+        },
+        LMSGetLastError: () => {
+          console.log("LMSGetLastError::");
+        },
+        LMSGetErrorString: (errorCode) => {
+          console.log("LMSGetErrorString::", errorCode);
+        },
+        LMSGetDiagnostic: (errocCode) => {
+          console.log("LMSGetDiagnostic::", errocCode);
+        },
+      };
+    </script>
+  </body>
+</html>

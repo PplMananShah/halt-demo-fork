@@ -37,26 +37,16 @@ Amplify.configure({
 });
 
 
-import { Hub } from 'aws-amplify';
-import { DashComponent } from './dash/dash.component';
 import { SigninComponent } from './signin/signin.component';
-
+import { DashComponent } from './dash/dash.component';
 
 // You can get the current config object
 // const currentConfig = Auth.configure();
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashComponent,
-    SigninComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AmplifyUIAngularModule
-  ],
+  declarations: [AppComponent, DashComponent, SigninComponent],
+  imports: [BrowserModule, AppRoutingModule, AmplifyUIAngularModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
