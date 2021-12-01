@@ -1,0 +1,32 @@
+{
+  "version": "3.51.24979.0",
+  "course_id": "6Kc2nWOv1cT_course_id",
+  "title": "Example 1",
+  "thumbnail": "story_content/thumbnail.jpg",
+  "scenes": [
+    {
+      "title": "Chapter 1"
+    }
+  ],
+  "slides": [
+    {
+      "id": "6J0RIbopVVC",
+      "title": "Example 1",
+      "scene_index": "1.1"
+    },
+    {
+      "id": "5lEm0wiAxn7",
+      "title": "Pick One",
+      "scene_index": "1.2"
+    }
+  ],
+  "player": {
+    "name": "classic",
+    "width": 740,
+    "height": 560
+  },
+  "stage": {
+    "width": 720,
+    "height": 540
+  }
+}

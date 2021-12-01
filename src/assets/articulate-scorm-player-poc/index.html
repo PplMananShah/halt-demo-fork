@@ -19,9 +19,7 @@
     </style>
   </head>
   <body>
-    Hello
-    Hi
-    <iframe src="courses/employee-health-and-wellness-sample-course-scorm12-0XmOfuPk/scormdriver/indexAPI.html"> </iframe>
+    <iframe src="courses/introductory-module-scorm12-6ieA3rIq/scormdriver/indexAPI.html"> </iframe>
     <script>
       window.onmessage = (event) => {
         console.log(event);
@@ -57,9 +55,9 @@
           //     varValue = scormObj.cardPerformanceId;
           //     break;
 
-          case 'cmi.core.student_name':
-            varValue = "Manan Shah";
-            break;
+          // case 'cmi.core.student_name':
+          //   varValue = user.name();
+          //   break;
 
           case "cmi.core.lesson_mode":
             varValue = scormMainContent.lesson_mode;
@@ -74,7 +72,7 @@
             break;
 
           case "cmi.learner_name":
-            varValue = "Manan Shah";
+            varValue = user.name();
             break;
 
           //   case "cmi.core.student_id" || "cmi.learner_id":
@@ -96,11 +94,11 @@
           case "cmi.score.raw":
             varValue = scormMainContent.score_raw;
             break;
-*/
+
           case "cmi.core.lesson_location":
-            varValue = "index.html#/lessons/w9fXbu_74bpn3TRxjnV5Wr3z7LHbpOsQ";
+            varValue = scormMainContent.lesson_location;
             break;
-/*
+
           case "cmi.location":
             varValue = scormMainContent.lesson_location;
             break;
@@ -175,17 +173,16 @@
       window.API = {
         LMSInitialize: (input) => {
           console.log("LMSInitialize::", input);
-          window
         },
         LMSFinish: (input) => {
           console.log("LMSFinish::", input);
         },
         LMSGetValue: (element) => {
-          console.log("NAN::", element);
+          console.log("LMSGetValue::", element);
           return SCORM.getValueFromLMS(element);
         },
         LMSSetValue: (element, value) => {
-          console.log("MANAN::", element, "THERE", value);
+          console.log("LMSSetValue::", element, value);
         },
         LMSCommit: (input) => {
           console.log("LMSCommit::", input);

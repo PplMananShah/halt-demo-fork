@@ -39,6 +39,8 @@ Amplify.configure({
 
 import { SigninComponent } from './signin/signin.component';
 import { DashComponent } from './dash/dash.component';
+import { ApiService } from './api.service';
+import { WindowRef } from './windowRef';
 
 // You can get the current config object
 // const currentConfig = Auth.configure();
@@ -46,7 +48,7 @@ import { DashComponent } from './dash/dash.component';
 @NgModule({
   declarations: [AppComponent, DashComponent, SigninComponent],
   imports: [BrowserModule, AppRoutingModule, AmplifyUIAngularModule],
-  providers: [],
+  providers: [ApiService,WindowRef],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

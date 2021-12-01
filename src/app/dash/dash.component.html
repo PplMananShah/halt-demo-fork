@@ -1,4 +1,10 @@
-<p>dash works!</p>
 
-<iframe src="../../assets/articulate-scorm-player-poc/courses/employee-health-and-wellness-sample-course-scorm12-0XmOfuPk/scormdriver/indexAPI.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
-<p>dash works!</p>
+
+<svg *ngIf="scormInitialized">
+  <circle cx="50" cy="50" r="40" stroke="red" stroke-dasharray="78.5 235.5" stroke-width="3" fill="none" />
+  <circle cx="50" cy="50" r="30" stroke="blue" stroke-dasharray="62.8 188.8" stroke-width="3" fill="none" />
+  <circle cx="50" cy="50" r="20" stroke="green" stroke-dasharray="47.1 141.3" stroke-width="3" fill="none" />
+</svg>
+
+<iframe src="../../assets/articulate-scorm-player-poc/courses/introductory-module-scorm12-6ieA3rIq/scormdriver/indexAPI.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;position: absolute;overflow-y:hidden;height:100%;width:100%;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
+
